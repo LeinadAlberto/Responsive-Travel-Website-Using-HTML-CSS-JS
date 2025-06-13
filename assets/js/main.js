@@ -30,10 +30,28 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*=============== SWIPER HOME ===============*/
-
+const swiperHome = new Swiper('.home__swiper', {
+    loop: true,
+    slidesPerView: 'auto',
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    }
+})
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
+const bgHeader = () => {
+    const header = document.getElementById('header')
+    // Add a class if the bottom offset is greater than 50 of the viewport
+    this.scrollY >= 50 ? header.classList.add('bg-header') 
+                       : header.classList.remove('bg-header')
+}
 
+window.addEventListener('scroll', bgHeader)
 
 /*=============== SWIPER TESTIMONIAL ===============*/
 
